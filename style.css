@@ -42,8 +42,8 @@ body {
 
 .text-layer {
     position: absolute;
-    color: #000;
-    /* Default to dark text for all layers */
+    color: #fff;
+    /* White text for visibility on dark backgrounds */
     font-family: Arial, sans-serif;
     z-index: 10;
 }
@@ -51,7 +51,7 @@ body {
 /* Greeting Section (Top Left) */
 .greeting-layer {
     top: 25%;
-    left: 8%;
+    left: 2%;
     width: 60%;
     /* Limit width to force wrapping if needed, though BRs are used */
     text-align: left;
@@ -60,18 +60,18 @@ body {
 .greeting-layer p {
     margin-bottom: 5px;
     letter-spacing: 0.5px;
-    color: #000;
+    color: #fff;
     line-height: 1.4;
 }
 
 .greeting-layer .title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 
 .greeting-layer .warning {
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 /* Info Section (Middle - Contact Info) */
@@ -111,12 +111,13 @@ body {
 
 /* Verification Section (Bottom Right) */
 .verify-layer {
-    bottom: 2%;
-    /* Moved to the bottom edge */
+    bottom: 0;
+    /* At the bottom edge */
     right: 2%;
     /* Moved to the right edge */
     text-align: right;
     width: 50%;
+    padding-bottom: 75px;
 }
 
 .verify-layer .verify {
@@ -128,17 +129,18 @@ body {
 /* Flags Section (Bottom Left) */
 .flags-container {
     position: absolute;
-    bottom: 2%;
-    /* Moved closer to the edge */
+    bottom: 0;
+    /* At the bottom edge */
     left: 2%;
     /* Moved closer to the edge */
     display: flex;
     gap: 10px;
+    padding-bottom: 15px;
 }
 
 .flag {
-    width: 45px;
-    height: 30px;
+    width: 60px;
+    height: 40px;
     border: 1px solid #333;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     position: relative;
@@ -224,8 +226,9 @@ body {
     }
 
     .verify-layer {
-        bottom: 8%;
+        bottom: 0;
         right: 5%;
+        padding-bottom: 75px;
     }
 
     .verify-layer .verify {
@@ -233,9 +236,10 @@ body {
     }
 
     .flags-container {
-        bottom: 5%;
+        bottom: 0;
         left: 8%;
         gap: 8px;
+        padding-bottom: 15px;
     }
 
     .flag {
