@@ -8,11 +8,15 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background: #000;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    /* Fallback */
+    height: 100dvh;
+    /* Use dynamic viewport height for mobile */
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* Align to top */
+    overflow: hidden;
+    /* Prevent scrolling */
 }
 
 .main-container {
@@ -25,8 +29,8 @@ body {
 .image-wrapper {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    /* Container fills full viewport */
+    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -34,7 +38,8 @@ body {
 .full-screen-image {
     display: block;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    /* Fill parent height */
     object-fit: cover;
     /* Covers entire viewport, may crop slightly to fill */
     object-position: center;
