@@ -11,12 +11,13 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to top */
+    align-items: flex-start;
+    /* Align to top */
 }
 
 .main-container {
     width: 100%;
-    max-width: 100%; /* Adapt to full device width */
+    /* Full width, no max-width constraint */
     background: #000;
     margin: 0 auto;
 }
@@ -24,17 +25,25 @@ body {
 .image-wrapper {
     position: relative;
     width: 100%;
+    min-height: 100vh;
+    /* Container fills full viewport */
+    overflow: hidden;
 }
 
+/* Responsive image that fills viewport without black bars */
 .full-screen-image {
-    width: 100%;
-    height: auto;
     display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* Covers entire viewport, may crop slightly to fill */
+    object-position: center;
 }
 
 .text-layer {
     position: absolute;
-    color: #000; /* Default to dark text for all layers */
+    color: #000;
+    /* Default to dark text for all layers */
     font-family: Arial, sans-serif;
     z-index: 10;
 }
@@ -43,7 +52,8 @@ body {
 .greeting-layer {
     top: 25%;
     left: 8%;
-    width: 60%; /* Limit width to force wrapping if needed, though BRs are used */
+    width: 60%;
+    /* Limit width to force wrapping if needed, though BRs are used */
     text-align: left;
 }
 
@@ -66,8 +76,10 @@ body {
 
 /* Info Section (Middle - Contact Info) */
 .info-layer {
-    top: 58%; /* Moved down from 40% to fix overlap */
-    left: 30%; /* Indented from the left */
+    top: 58%;
+    /* Moved down from 40% to fix overlap */
+    left: 30%;
+    /* Indented from the left */
     width: 60%;
     text-align: left;
     display: flex;
@@ -78,10 +90,13 @@ body {
 
 .info-layer p {
     margin: 0;
-    font-size: 0.65rem; /* Small font for contact info */
+    font-size: 0.65rem;
+    /* Small font for contact info */
     color: #000;
-    font-weight: bold; /* Looks slightly bolder in screenshot */
-    transform: scale(0.9); /* Slight scaling to match the thin crisp look if needed, or just font-size */
+    font-weight: bold;
+    /* Looks slightly bolder in screenshot */
+    transform: scale(0.9);
+    /* Slight scaling to match the thin crisp look if needed, or just font-size */
     transform-origin: left;
 }
 
@@ -96,8 +111,10 @@ body {
 
 /* Verification Section (Bottom Right) */
 .verify-layer {
-    bottom: 2%; /* Moved to the bottom edge */
-    right: 2%;  /* Moved to the right edge */
+    bottom: 2%;
+    /* Moved to the bottom edge */
+    right: 2%;
+    /* Moved to the right edge */
     text-align: right;
     width: 50%;
 }
@@ -111,8 +128,10 @@ body {
 /* Flags Section (Bottom Left) */
 .flags-container {
     position: absolute;
-    bottom: 2%; /* Moved closer to the edge */
-    left: 2%;   /* Moved closer to the edge */
+    bottom: 2%;
+    /* Moved closer to the edge */
+    left: 2%;
+    /* Moved closer to the edge */
     display: flex;
     gap: 10px;
 }
@@ -121,17 +140,18 @@ body {
     width: 45px;
     height: 30px;
     border: 1px solid #333;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     position: relative;
-    background-color: #fff; /* fallback */
+    background-color: #fff;
+    /* fallback */
 }
 
 /* Syria: Red, White, Black horizontal */
 .syria {
-    background: linear-gradient(to bottom, 
-        #CE1126 33.33%, 
-        #fff 33.33%, #fff 66.66%, 
-        #000 66.66%);
+    background: linear-gradient(to bottom,
+            #CE1126 33.33%,
+            #fff 33.33%, #fff 66.66%,
+            #000 66.66%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -155,47 +175,61 @@ body {
 
 /* France: Blue, White, Red vertical */
 .france {
-    background: linear-gradient(to right, 
-        #0055A4 33.33%, 
-        #fff 33.33%, #fff 66.66%, 
-        #EF4135 66.66%);
+    background: linear-gradient(to right,
+            #0055A4 33.33%,
+            #fff 33.33%, #fff 66.66%,
+            #EF4135 66.66%);
 }
 
 /* Germany: Black, Red, Gold horizontal */
 .germany {
-    background: linear-gradient(to bottom, 
-        #000 33.33%, 
-        #DD0000 33.33%, #DD0000 66.66%, 
-        #FFCE00 66.66%);
+    background: linear-gradient(to bottom,
+            #000 33.33%,
+            #DD0000 33.33%, #DD0000 66.66%,
+            #FFCE00 66.66%);
 }
 
 /* Russia: White, Blue, Red horizontal */
 .russia {
-    background: linear-gradient(to bottom, 
-        #fff 33.33%, 
-        #0039A6 33.33%, #0039A6 66.66%, 
-        #D52B1E 66.66%);
+    background: linear-gradient(to bottom,
+            #fff 33.33%,
+            #0039A6 33.33%, #0039A6 66.66%,
+            #D52B1E 66.66%);
 }
 
 /* Responsive adjustments for mobile */
 @media (max-width: 480px) {
-    .greeting-layer { top: 22%; left: 8%; }
-    .greeting-layer .title { font-size: 0.95rem; }
-    .greeting-layer .warning { font-size: 0.9rem; margin-top: 15px; }
-    
-    .info-layer { 
-        top: 60%; 
-        left: 30%; 
-        gap: 10px; 
+    .greeting-layer {
+        top: 22%;
+        left: 8%;
     }
-    .info-layer p { font-size: 0.55rem; }
-    
+
+    .greeting-layer .title {
+        font-size: 0.95rem;
+    }
+
+    .greeting-layer .warning {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+
+    .info-layer {
+        top: 60%;
+        left: 30%;
+        gap: 10px;
+    }
+
+    .info-layer p {
+        font-size: 0.55rem;
+    }
+
     .verify-layer {
         bottom: 8%;
         right: 5%;
     }
-    .verify-layer .verify { 
-        font-size: 0.65rem; 
+
+    .verify-layer .verify {
+        font-size: 0.65rem;
     }
 
     .flags-container {
@@ -203,12 +237,12 @@ body {
         left: 8%;
         gap: 8px;
     }
-    
+
     .flag {
         width: 36px;
         height: 24px;
     }
-    
+
     .syria .star {
         font-size: 8px;
     }
