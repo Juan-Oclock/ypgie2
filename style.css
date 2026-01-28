@@ -114,22 +114,7 @@ body {
     line-height: 1.4;
 }
 
-/* Verification Section (Bottom Right) */
-.verify-layer {
-    bottom: 0;
-    /* At the bottom edge */
-    right: 2%;
-    /* Moved to the right edge */
-    text-align: right;
-    width: 50%;
-    padding-bottom: 75px;
-}
 
-.verify-layer .verify {
-    color: #fff;
-    font-size: 0.75rem;
-    margin-bottom: 5px;
-}
 
 /* Flags Section (Bottom Left) */
 .flags-container {
@@ -230,15 +215,7 @@ body {
         font-size: 0.55rem;
     }
 
-    .verify-layer {
-        bottom: 0;
-        right: 5%;
-        padding-bottom: 75px;
-    }
 
-    .verify-layer .verify {
-        font-size: 0.65rem;
-    }
 
     .flags-container {
         bottom: 0;
